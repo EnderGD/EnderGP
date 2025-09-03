@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ender's Cosmic Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      @keyframes animate-in {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .animate-in {
+        animation: animate-in 0.5s ease-out forwards;
+      }
+      
+      .animation-delay-1 { animation-delay: 0.1s; }
+      .animation-delay-2 { animation-delay: 0.2s; }
+      .animation-delay-3 { animation-delay: 0.3s; }
+      .animation-delay-4 { animation-delay: 0.4s; }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #0c0a1f;
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4, h5, h6, .font-orbitron {
+        font-family: 'Orbitron', sans-serif;
+      }
+
+      /* Starry Background */
+      .stars, .stars2, .stars3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: transparent;
+        z-index: 0;
+      }
+
+      .stars {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAA60lEQVRoQ+2WsQ2AMAwED1/y3/S/I+xCQGg7D8LhYQIJNpl37t4A4PChpQDADyQ5gD8kOYB/JNmAD8kOYB/JNmAPyQ5gH8kOYB/JDmAfyQ5gH8kOYB/JDmAfyQ5gH8kOYB/JNmAPyQ5gH8k2YA/JDmAfyTZgD8kOYB/JDmAfyQ5gH8kOYB/JDmAfyQ5gH8k2YA/JDmAfyTZgD8kOYB/JDmAfyQ5gH8kOYB/JDmAfyQ5gH8k2YA/JDmAfyQ5gH8kOYB/JDmAfyQ5gH8kOYB/JNmAPyQ5gH8k2YA/JDmAfyTZgD8kOYB/JNlAPzQ6/gH4A1I0b+SgYJ0AAAAASUVORK5CYII=) repeat top left;
+        animation: move-twink-back 200s linear infinite;
+      }
+
+      .stars2 {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAA7ElEQVRoQ+2WsQ3AMAgD9/yV/qf9D0hEhGg7D8LhYQIJNpl37t4A4PCxpQDADyQ5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD+SHOCfyA5wD80Ot5B+AIlT0fyQO36YAAAAASUVORK5CYII=) repeat top left;
+        animation: move-twink-back 150s linear infinite;
+      }
+
+      .stars3 {
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAA6klEQVRoQ+2WsQ3AMAgD9/yV/qf9j0gihGg7D8LhYQIJNpl37t4A4PCxpQDAHyQ5wD+SHOA/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D+QHOB/kBzgP5Ac4D80Ot5B+AI5UUeyQNMpYAAAAASUVORK5CYII=) repeat top left;
+        animation: move-twink-back 100s linear infinite;
+      }
+
+      @keyframes move-twink-back {
+        from {background-position:0 0;}
+        to {background-position:-10000px 5000px;}
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.2.1/",
+    "@firebase/analytics": "https://aistudiocdn.com/@firebase/analytics@^0.10.18"
+  }
+}
+</script>
+</head>
+  <body class="bg-[#0c0a1f] text-gray-200">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+    <div id="root" class="relative z-10"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
